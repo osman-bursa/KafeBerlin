@@ -95,6 +95,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AnaForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kafe Berlin";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

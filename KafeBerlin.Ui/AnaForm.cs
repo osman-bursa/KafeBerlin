@@ -50,8 +50,14 @@ namespace KafeBerlin.Ui
                 lvi.ImageKey = "dolu";
             }
             //sipariş yoksa oluşturduk varsa olanı bulduk ve siparis e aktardık.
-            new SiparisForm(db, siparis).ShowDialog(); 
             // db ve siparis i SiparisForma aktardık ve gösterdik.
+            DialogResult dr = new SiparisForm(db, siparis).ShowDialog();
+
+            if (dr == DialogResult.OK)
+            {
+                lvi.ImageKey = "bos";
+
+            }
         }
     }
 }

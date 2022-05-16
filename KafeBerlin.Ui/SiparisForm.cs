@@ -21,6 +21,7 @@ namespace KafeBerlin.Ui
             _db = db;
             _siparis = siparis;
             InitializeComponent();
+            dgvDetaylar.AutoGenerateColumns = false;
             MasaNoGuncelle();
             UrunleriListele();
             OdemeTutariGuncelle();
@@ -32,6 +33,8 @@ namespace KafeBerlin.Ui
             _blSiparisDetaylar = new BindingList<SiparisDetay>(_siparis.SiparisDetaylar);
             _blSiparisDetaylar.ListChanged += _blSiparisDetaylar_ListChanged;
             dgvDetaylar.DataSource = _blSiparisDetaylar;
+
+            //dgvDetaylar.Columns[0].HeaderText = "Ürün"; // Manuel olarak kolon isimlerini değiştirme
         }
 
         private void _blSiparisDetaylar_ListChanged(object sender, ListChangedEventArgs e)
@@ -61,7 +64,7 @@ namespace KafeBerlin.Ui
             if (cboUrun.SelectedItem == null)
             {
                 MessageBox.Show("Önce bir ürün seçmelisiniz");
-                return; 
+                return;
             }
 
             Urun urun = (Urun)cboUrun.SelectedItem;
@@ -72,6 +75,46 @@ namespace KafeBerlin.Ui
                 UrunAd = urun.UrunAd,
                 BirimFiyat = urun.BirimFiyat
             });
+
+            nudAdet.Value = 1;
+        }
+
+        private void btnAnaSayfayaDon_Click(object sender, EventArgs e)
+        {
+            //Close(); // formu kapatır
+            DialogResult = DialogResult.Cancel;
+        }
+
+        private void btnSiparisIptal_Click(object sender, EventArgs e)
+        {
+            SiparisiKapat(0, SiparisDurum.Iptal);
+        }
+
+        private void btnOdemeAl_Click(object sender, EventArgs e)
+        {
+            SiparisiKapat(_siparis.ToplamTutar(), SiparisDurum.Odendi);
+        }
+
+        void SiparisiKapat(decimal odenenTutar, SiparisDurum durum)
+        {
+            string eylem = durum == SiparisDurum.Iptal ? "iptal edilecektir" : "kapatılacaktır";
+            string baslik = durum == SiparisDurum.Iptal ? "İptal" : "Kapatma";
+            
+            var dr = MessageBox.Show(
+                $"{_siparis.MasaNo} nolu masanın siparişi {eylem} Emin misiniz?",
+                $"Sipariş {baslik} Onayı",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning,
+                MessageBoxDefaultButton.Button2);
+
+            if (dr == DialogResult.Yes)
+            {
+                _siparis.OdenenTutar = odenenTutar;
+                _siparis.Durum = durum;
+                _db.AktifSiparisler.Remove(_siparis);
+                _db.GecmisSiparisler.Add(_siparis);
+                DialogResult = DialogResult.OK;
+            }
         }
     }
 }

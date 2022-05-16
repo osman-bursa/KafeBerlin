@@ -114,6 +114,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(891, 643);
             this.Name = "UrunlerForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Ürünler";
             ((System.ComponentModel.ISupportInitialize)(this.dgvUrunler)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBirimFiyat)).EndInit();
