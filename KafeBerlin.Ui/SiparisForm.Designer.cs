@@ -28,10 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.btnEkle = new System.Windows.Forms.Button();
             this.dgvDetaylar = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nudAdet = new System.Windows.Forms.NumericUpDown();
             this.cboUrun = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,10 +48,6 @@
             this.btnOdemeAl = new System.Windows.Forms.Button();
             this.btnAnaSayfayaDon = new System.Windows.Forms.Button();
             this.lblOdemeTutari = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetaylar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAdet)).BeginInit();
             this.SuspendLayout();
@@ -64,7 +64,7 @@
             // 
             // btnEkle
             // 
-            this.btnEkle.Location = new System.Drawing.Point(407, 37);
+            this.btnEkle.Location = new System.Drawing.Point(502, 37);
             this.btnEkle.Margin = new System.Windows.Forms.Padding(4);
             this.btnEkle.Name = "btnEkle";
             this.btnEkle.Size = new System.Drawing.Size(112, 33);
@@ -94,157 +94,8 @@
             this.dgvDetaylar.RowHeadersWidth = 62;
             this.dgvDetaylar.RowTemplate.Height = 28;
             this.dgvDetaylar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDetaylar.Size = new System.Drawing.Size(563, 552);
+            this.dgvDetaylar.Size = new System.Drawing.Size(602, 553);
             this.dgvDetaylar.TabIndex = 2;
-            // 
-            // nudAdet
-            // 
-            this.nudAdet.Location = new System.Drawing.Point(242, 39);
-            this.nudAdet.Margin = new System.Windows.Forms.Padding(4);
-            this.nudAdet.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nudAdet.Name = "nudAdet";
-            this.nudAdet.Size = new System.Drawing.Size(137, 30);
-            this.nudAdet.TabIndex = 3;
-            this.nudAdet.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // cboUrun
-            // 
-            this.cboUrun.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboUrun.FormattingEnabled = true;
-            this.cboUrun.Location = new System.Drawing.Point(13, 37);
-            this.cboUrun.Name = "cboUrun";
-            this.cboUrun.Size = new System.Drawing.Size(211, 33);
-            this.cboUrun.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(237, 9);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 25);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Adet";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(615, 8);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 25);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Masa No:";
-            // 
-            // cboMasaNo
-            // 
-            this.cboMasaNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboMasaNo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboMasaNo.FormattingEnabled = true;
-            this.cboMasaNo.Location = new System.Drawing.Point(615, 36);
-            this.cboMasaNo.Name = "cboMasaNo";
-            this.cboMasaNo.Size = new System.Drawing.Size(172, 33);
-            this.cboMasaNo.TabIndex = 4;
-            // 
-            // btnTasi
-            // 
-            this.btnTasi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTasi.Location = new System.Drawing.Point(809, 36);
-            this.btnTasi.Margin = new System.Windows.Forms.Padding(4);
-            this.btnTasi.Name = "btnTasi";
-            this.btnTasi.Size = new System.Drawing.Size(177, 33);
-            this.btnTasi.TabIndex = 1;
-            this.btnTasi.Text = "TAŞI";
-            this.btnTasi.UseVisualStyleBackColor = true;
-            // 
-            // lblMasaNo
-            // 
-            this.lblMasaNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblMasaNo.BackColor = System.Drawing.Color.DarkOrange;
-            this.lblMasaNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblMasaNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblMasaNo.ForeColor = System.Drawing.Color.White;
-            this.lblMasaNo.Location = new System.Drawing.Point(610, 78);
-            this.lblMasaNo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblMasaNo.Name = "lblMasaNo";
-            this.lblMasaNo.Size = new System.Drawing.Size(376, 274);
-            this.lblMasaNo.TabIndex = 0;
-            this.lblMasaNo.Text = "00";
-            this.lblMasaNo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(619, 383);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(168, 29);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Ödeme Tutarı ";
-            // 
-            // btnSiparisIptal
-            // 
-            this.btnSiparisIptal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSiparisIptal.BackColor = System.Drawing.Color.DarkRed;
-            this.btnSiparisIptal.ForeColor = System.Drawing.Color.White;
-            this.btnSiparisIptal.Location = new System.Drawing.Point(610, 437);
-            this.btnSiparisIptal.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSiparisIptal.Name = "btnSiparisIptal";
-            this.btnSiparisIptal.Size = new System.Drawing.Size(177, 83);
-            this.btnSiparisIptal.TabIndex = 1;
-            this.btnSiparisIptal.Text = "SİPARİŞ İPTAL";
-            this.btnSiparisIptal.UseVisualStyleBackColor = false;
-            this.btnSiparisIptal.Click += new System.EventHandler(this.btnSiparisIptal_Click);
-            // 
-            // btnOdemeAl
-            // 
-            this.btnOdemeAl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOdemeAl.BackColor = System.Drawing.Color.OliveDrab;
-            this.btnOdemeAl.ForeColor = System.Drawing.Color.White;
-            this.btnOdemeAl.Location = new System.Drawing.Point(809, 437);
-            this.btnOdemeAl.Margin = new System.Windows.Forms.Padding(4);
-            this.btnOdemeAl.Name = "btnOdemeAl";
-            this.btnOdemeAl.Size = new System.Drawing.Size(177, 83);
-            this.btnOdemeAl.TabIndex = 1;
-            this.btnOdemeAl.Text = "ÖDEME AL";
-            this.btnOdemeAl.UseVisualStyleBackColor = false;
-            this.btnOdemeAl.Click += new System.EventHandler(this.btnOdemeAl_Click);
-            // 
-            // btnAnaSayfayaDon
-            // 
-            this.btnAnaSayfayaDon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAnaSayfayaDon.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.btnAnaSayfayaDon.Location = new System.Drawing.Point(610, 543);
-            this.btnAnaSayfayaDon.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAnaSayfayaDon.Name = "btnAnaSayfayaDon";
-            this.btnAnaSayfayaDon.Size = new System.Drawing.Size(376, 87);
-            this.btnAnaSayfayaDon.TabIndex = 1;
-            this.btnAnaSayfayaDon.Text = "ANASAYFAYA DÖN";
-            this.btnAnaSayfayaDon.UseVisualStyleBackColor = false;
-            this.btnAnaSayfayaDon.Click += new System.EventHandler(this.btnAnaSayfayaDon_Click);
-            // 
-            // lblOdemeTutari
-            // 
-            this.lblOdemeTutari.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblOdemeTutari.AutoSize = true;
-            this.lblOdemeTutari.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblOdemeTutari.Location = new System.Drawing.Point(833, 383);
-            this.lblOdemeTutari.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblOdemeTutari.Name = "lblOdemeTutari";
-            this.lblOdemeTutari.Size = new System.Drawing.Size(77, 29);
-            this.lblOdemeTutari.TabIndex = 0;
-            this.lblOdemeTutari.Text = "0,00 ₺";
             // 
             // Column1
             // 
@@ -257,9 +108,9 @@
             // Column2
             // 
             this.Column2.DataPropertyName = "BirimFiyat";
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle1;
             this.Column2.HeaderText = "Birim Fiyat";
             this.Column2.MinimumWidth = 8;
             this.Column2.Name = "Column2";
@@ -281,11 +132,160 @@
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
+            // nudAdet
+            // 
+            this.nudAdet.Location = new System.Drawing.Point(337, 39);
+            this.nudAdet.Margin = new System.Windows.Forms.Padding(4);
+            this.nudAdet.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudAdet.Name = "nudAdet";
+            this.nudAdet.Size = new System.Drawing.Size(137, 30);
+            this.nudAdet.TabIndex = 3;
+            this.nudAdet.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // cboUrun
+            // 
+            this.cboUrun.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboUrun.FormattingEnabled = true;
+            this.cboUrun.Location = new System.Drawing.Point(13, 37);
+            this.cboUrun.Name = "cboUrun";
+            this.cboUrun.Size = new System.Drawing.Size(296, 33);
+            this.cboUrun.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(332, 9);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 25);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Adet";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(654, 8);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(97, 25);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Masa No:";
+            // 
+            // cboMasaNo
+            // 
+            this.cboMasaNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboMasaNo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMasaNo.FormattingEnabled = true;
+            this.cboMasaNo.Location = new System.Drawing.Point(654, 36);
+            this.cboMasaNo.Name = "cboMasaNo";
+            this.cboMasaNo.Size = new System.Drawing.Size(172, 33);
+            this.cboMasaNo.TabIndex = 4;
+            // 
+            // btnTasi
+            // 
+            this.btnTasi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTasi.Location = new System.Drawing.Point(848, 36);
+            this.btnTasi.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTasi.Name = "btnTasi";
+            this.btnTasi.Size = new System.Drawing.Size(177, 33);
+            this.btnTasi.TabIndex = 1;
+            this.btnTasi.Text = "TAŞI";
+            this.btnTasi.UseVisualStyleBackColor = true;
+            // 
+            // lblMasaNo
+            // 
+            this.lblMasaNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblMasaNo.BackColor = System.Drawing.Color.DarkOrange;
+            this.lblMasaNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblMasaNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblMasaNo.ForeColor = System.Drawing.Color.White;
+            this.lblMasaNo.Location = new System.Drawing.Point(649, 78);
+            this.lblMasaNo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMasaNo.Name = "lblMasaNo";
+            this.lblMasaNo.Size = new System.Drawing.Size(376, 274);
+            this.lblMasaNo.TabIndex = 0;
+            this.lblMasaNo.Text = "00";
+            this.lblMasaNo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.Location = new System.Drawing.Point(658, 384);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(168, 29);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Ödeme Tutarı ";
+            // 
+            // btnSiparisIptal
+            // 
+            this.btnSiparisIptal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSiparisIptal.BackColor = System.Drawing.Color.DarkRed;
+            this.btnSiparisIptal.ForeColor = System.Drawing.Color.White;
+            this.btnSiparisIptal.Location = new System.Drawing.Point(649, 438);
+            this.btnSiparisIptal.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSiparisIptal.Name = "btnSiparisIptal";
+            this.btnSiparisIptal.Size = new System.Drawing.Size(177, 83);
+            this.btnSiparisIptal.TabIndex = 1;
+            this.btnSiparisIptal.Text = "SİPARİŞ İPTAL";
+            this.btnSiparisIptal.UseVisualStyleBackColor = false;
+            this.btnSiparisIptal.Click += new System.EventHandler(this.btnSiparisIptal_Click);
+            // 
+            // btnOdemeAl
+            // 
+            this.btnOdemeAl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOdemeAl.BackColor = System.Drawing.Color.OliveDrab;
+            this.btnOdemeAl.ForeColor = System.Drawing.Color.White;
+            this.btnOdemeAl.Location = new System.Drawing.Point(848, 438);
+            this.btnOdemeAl.Margin = new System.Windows.Forms.Padding(4);
+            this.btnOdemeAl.Name = "btnOdemeAl";
+            this.btnOdemeAl.Size = new System.Drawing.Size(177, 83);
+            this.btnOdemeAl.TabIndex = 1;
+            this.btnOdemeAl.Text = "ÖDEME AL";
+            this.btnOdemeAl.UseVisualStyleBackColor = false;
+            this.btnOdemeAl.Click += new System.EventHandler(this.btnOdemeAl_Click);
+            // 
+            // btnAnaSayfayaDon
+            // 
+            this.btnAnaSayfayaDon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAnaSayfayaDon.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnAnaSayfayaDon.Location = new System.Drawing.Point(649, 544);
+            this.btnAnaSayfayaDon.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAnaSayfayaDon.Name = "btnAnaSayfayaDon";
+            this.btnAnaSayfayaDon.Size = new System.Drawing.Size(376, 87);
+            this.btnAnaSayfayaDon.TabIndex = 1;
+            this.btnAnaSayfayaDon.Text = "ANASAYFAYA DÖN";
+            this.btnAnaSayfayaDon.UseVisualStyleBackColor = false;
+            this.btnAnaSayfayaDon.Click += new System.EventHandler(this.btnAnaSayfayaDon_Click);
+            // 
+            // lblOdemeTutari
+            // 
+            this.lblOdemeTutari.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblOdemeTutari.AutoSize = true;
+            this.lblOdemeTutari.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblOdemeTutari.Location = new System.Drawing.Point(872, 384);
+            this.lblOdemeTutari.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblOdemeTutari.Name = "lblOdemeTutari";
+            this.lblOdemeTutari.Size = new System.Drawing.Size(77, 29);
+            this.lblOdemeTutari.TabIndex = 0;
+            this.lblOdemeTutari.Text = "0,00 ₺";
+            // 
             // SiparisForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 643);
+            this.ClientSize = new System.Drawing.Size(1039, 644);
             this.Controls.Add(this.cboMasaNo);
             this.Controls.Add(this.cboUrun);
             this.Controls.Add(this.nudAdet);
