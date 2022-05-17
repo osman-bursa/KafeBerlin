@@ -1,6 +1,6 @@
 ﻿namespace KafeBerlin.Ui
 {
-    partial class GecmisSiparislerForm
+    partial class GecmisSiparisler
     {
         /// <summary>
         /// Required designer variable.

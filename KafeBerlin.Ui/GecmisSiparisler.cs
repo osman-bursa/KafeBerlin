@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace KafeBerlin.Ui
 {
-    public partial class GecmisSiparislerForm : Form
+    public partial class GecmisSiparisler : Form
     {
         private readonly KafeVeri _db;
 
-        public GecmisSiparislerForm(KafeVeri db)
+        public GecmisSiparisler(KafeVeri db)
         {
             _db = db;
             InitializeComponent();
@@ -26,7 +26,7 @@ namespace KafeBerlin.Ui
         {
             if (dgvSiparisler.SelectedRows.Count == 0)
             {
-                dgvSiparisler.DataSource = null;
+                dgvDetaylar.DataSource = null;
             }
             else
             {
