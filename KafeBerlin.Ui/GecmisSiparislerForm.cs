@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace KafeBerlin.Ui
 {
-    public partial class GecmisSiparisler : Form
+    public partial class GecmisSiparislerForm : Form
     {
         private readonly KafeVeri _db;
 
-        public GecmisSiparisler(KafeVeri db)
+        public GecmisSiparislerForm(KafeVeri db)
         {
             _db = db;
             InitializeComponent();

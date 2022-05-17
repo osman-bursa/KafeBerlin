@@ -47,7 +47,7 @@ namespace KafeBerlin.Ui
             for (int i = 1; i <= db.MasaAdet; i++)
             {
                 var lvi = new ListViewItem($"Masa {i}");
-                lvi.ImageKey = db.AktifSiparisler.Any(x => x.MasaNo == i) ? "dolu" : "bos";
+                lvi.ImageKey = db.MasaDoluMu(i) ? "dolu" : "bos";
                 lvi.Tag = i;
                 lvwMasalar.Items.Add(lvi);
             }
@@ -66,12 +66,33 @@ namespace KafeBerlin.Ui
             }
             //sipariş yoksa oluşturduk varsa olanı bulduk ve siparis e aktardık.
             // db ve siparis i SiparisForma aktardık ve gösterdik.
-            DialogResult dr = new SiparisForm(db, siparis).ShowDialog();
+            var sf = new SiparisForm(db, siparis);
+            sf.MasaTasindi += Sf_MasaTasindi;
+            DialogResult dr = sf.ShowDialog();
 
             if (dr == DialogResult.OK)
             {
                 lvi.ImageKey = "bos";
 
+            }
+        }
+
+        private void Sf_MasaTasindi(object sender, MasaTasindiEventArgs e)
+        {
+            foreach (ListViewItem lvi in lvwMasalar.Items)
+            {
+                int masaNo = (int)lvi.Tag;
+
+                if (masaNo == e.EskiMasaNo)
+                {
+                    lvi.ImageKey = "bos";
+                    lvi.Selected = false;
+                }
+                else if (masaNo == e.YeniMasaNo)
+                {
+                    lvi.ImageKey = "dolu";
+                    lvi.Selected = true;
+                }
             }
         }
 
@@ -82,7 +103,7 @@ namespace KafeBerlin.Ui
 
         private void tsmiGecmisSiparisler_Click(object sender, EventArgs e)
         {
-            new GecmisSiparisler(db).ShowDialog();
+            new GecmisSiparislerForm(db).ShowDialog();
         }
 
         private void AnaForm_FormClosed(object sender, FormClosedEventArgs e)
